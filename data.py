@@ -1,6 +1,6 @@
+import imp
 import os, time, json, string, re, random, threading, traceback, sys
 import livejson, requests
-import collections
 from collections.abc import MutableMapping
 class commands(threading.Thread):
     def __init__(self, fileName, client, app, uid):
