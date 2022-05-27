@@ -9,7 +9,7 @@ fileName = os.path.splitext(os.path.basename('data.py'))[0]
 
 db = livejson.File("token/%s.json" % fileName)
 
-if ":" in db['token']:
+if ":" in db['eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI3ZDEwZTdjOC1mNzNmLTRiZjctOTI1OC1hNWYzMjA1OGJlMjUiLCJhdWQiOiJMSU5FIiwiaWF0IjoxNjUzNTkyNDkxLCJleHAiOjE2NTQxOTcyOTEsInNjcCI6IkxJTkVfQ09SRSIsInJ0aWQiOiIyMWUxMjBmNy1mMDYzLTRmZGMtOWIwMi04YjQyMDE2OTQ1NTQiLCJyZXhwIjoxODExMjcyNDkxLCJ2ZXIiOiIzLjEiLCJhaWQiOiJ1N2FjNzhiOGY0ZDY2MDY5ZTljYTI0MTA1ZGM5MDM5N2UiLCJsc2lkIjoiOTZmN2M2YzktZDRmNy00MmY2LTk2ZjUtYjA5YjA0OTlmM2NlIiwiZGlkIjoiZTFjN2EwYzlmZWE0NmQwZDU2ZjM3YTI0ZDNlN2M4ZGEiLCJjdHlwZSI6IkFORFJPSUQiLCJjbW9kZSI6IlBSSU1BUlkiLCJjaWQiOiIwMDAwMDAwMDAwIn0.8heh18PTdKmv2bGu-UW5NYg8-BYgomjlZwXMlWckW_8']:
     app = "X-Line-Application\t2.11.1\tAndroid OS\t5.1.1"
 else:
     app = "DESKTOPWIN\t5.21.3\tWindows\t10"
