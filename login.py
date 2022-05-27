@@ -8,13 +8,19 @@ OT = OpType
 fileName = os.path.splitext(os.path.basename(__file__))[0]
 
 db = livejson.File("token/%s.json" % fileName)
-
+def __init__(self, fileName, client, app, uid):
+        super(commands, self).__init__()
+        self.fileName = fileName
+        self.client = client
+        self.app = app
+        self.uid = uid
+        self.db = livejson.File("database/%s.json"%fileName, True, True, 4)
 if ":" in db['token']:
     app = "ANDROID\t2.11.1\tAndroid OS\t5.1.1"
 else:
     app = "DESKTOPWIN\t5.21.3\tWindows\t10"
 try:
-    self.client = LINE(idOrAuthToken=db["token"], appName=app)
+    client = LINE(idOrAuthToken=db["token"], appName=app)
 except:
     e = traceback.format_exc()
     if "code=20" in e:print("FREEZING");time.sleep(3600);python3 = sys.executable;os.execl(python3, python3, *sys.argv)
@@ -22,7 +28,7 @@ except:
     else:traceback.print_exc()
     
 
-uid = self.client.profile.mid
+uid = client.profile.mid
 poll = OEPoll(client)
 good = commands(fileName, client, app, uid)
 print("LOGIN SUCCESS")
