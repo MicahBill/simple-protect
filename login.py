@@ -15,11 +15,13 @@ else:
     app = "DESKTOPWIN\t5.21.3\tWindows\t10"
 try:
     client = LINE(idOrAuthToken=db["token"], appName=app)
-except:
+except Exception as e:
     e = traceback.format_exc()
     if "code=20" in e:print("FREEZING");time.sleep(3600);python3 = sys.executable;os.execl(python3, python3, *sys.argv)
     elif "code=8" in e or "code=7" in e:client = LINE(db["mail"],db["pass"],certificate='{}.crt'.format(db["mail"]),appName=app);db['token'] = client.authToken
     else:traceback.print_exc()
+
+    print(e)
     
 uid = client.profile.mid
 poll = OEPoll(client)
