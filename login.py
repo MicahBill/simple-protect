@@ -14,7 +14,7 @@ if ":" in db['token']:
 else:
     app = "DESKTOPWIN\t5.21.3\tWindows\t10"
 try:
-    client = LINE(idOrAuthToken=db["token"], appName=app)
+    self.client = LINE(idOrAuthToken=db["token"], appName=app)
 except:
     e = traceback.format_exc()
     if "code=20" in e:print("FREEZING");time.sleep(3600);python3 = sys.executable;os.execl(python3, python3, *sys.argv)
@@ -22,7 +22,7 @@ except:
     else:traceback.print_exc()
     
 
-uid = client.profile.mid
+uid = self.client.profile.mid
 poll = OEPoll(client)
 good = commands(fileName, client, app, uid)
 print("LOGIN SUCCESS")
