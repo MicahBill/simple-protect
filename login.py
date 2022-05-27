@@ -5,13 +5,12 @@ from threading import Thread
 import os, livejson, traceback, time, sys
 from data import commands
 OT = OpType
-
 fileName = os.path.splitext(os.path.basename(__file__))[0]
 
 db = livejson.File("token/%s.json" % fileName)
 
 if ":" in db['token']:
-    app = "ANDROIDLITE\t2.11.1\tAndroid OS\t5.1.1"
+    app = "ANDROID\t2.11.1\tAndroid OS\t5.1.1"
 else:
     app = "DESKTOPWIN\t5.21.3\tWindows\t10"
 try:
@@ -21,6 +20,7 @@ except:
     if "code=20" in e:print("FREEZING");time.sleep(3600);python3 = sys.executable;os.execl(python3, python3, *sys.argv)
     elif "code=8" in e or "code=7" in e:client = LINE(db["mail"],db["pass"],certificate='{}.crt'.format(db["mail"]),appName=app);db['token'] = client.authToken
     else:traceback.print_exc()
+    
 uid = client.profile.mid
 poll = OEPoll(client)
 good = commands(fileName, client, app, uid)
