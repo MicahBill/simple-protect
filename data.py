@@ -9,7 +9,7 @@ class commands(threading.Thread):
         self.app = app
         self.uid = uid
         self.db = livejson.File("database/%s.json"%fileName, True, True, 4)
-        self.master = ["YOUR_MID"]
+        self.master = ["_u0be40d5b6854cce0f78b76a7ace30727"]
         self.invites = []
         self.settings = {
             "protect": {},
