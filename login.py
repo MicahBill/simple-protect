@@ -7,7 +7,7 @@ from data import commands
 OT = OpType
 fileName = os.path.splitext(os.path.basename('data.py'))[0]
 
-db = livejson.File("login/%s.json" % fileName)
+db = livejson.File("token/%s.json" % fileName)
 
 if ":" in db['token']:
     app = "X-Line-Application\t2.11.1\tAndroid OS\t5.1.1"
